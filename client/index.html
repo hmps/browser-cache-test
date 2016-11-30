@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Browser cache test</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.min.js"></script>
+</head>
+
+<body ng-app="ngDemo">
+
+  <div ng-controller="testController as test">
+    <p>Logged in: {{test.status}}</p>
+    <ul>
+      <li ng-repeat="user in test.users">{{user.name}} (password: {{user.password}})</li>
+    </ul>
+    <ul>
+      <li><button type="button" ng-click="test.login()">Login</button></li>
+      <li><button type="button" ng-click="test.fetchUsers()">Fetch users</button></li>
+      <li><button type="button" ng-click="test.logOut()">Log out (and leave)</button></li>
+      <li><button type="button" ng-click="test.chechStatus()">Check status</button></li>
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
